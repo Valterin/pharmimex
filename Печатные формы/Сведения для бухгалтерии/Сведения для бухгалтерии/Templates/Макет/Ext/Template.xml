@@ -461,23 +461,13 @@
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Паспорт</v8:content>
+							<v8:content>Паспорт серия </v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
-				<c>
-					<f>7</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>серия</v8:content>
-						</v8:item>
-					</tl>
-				</c>
-			</c>
-			<c>
+				<i>3</i>
 				<c>
 					<f>8</f>
 					<parameter>ДокументСерия</parameter>
@@ -613,7 +603,7 @@
 			<c>
 				<i>1</i>
 				<c>
-					<f>7</f>
+					<f>11</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -726,7 +716,7 @@
 			<c>
 				<i>6</i>
 				<c>
-					<f>11</f>
+					<f>12</f>
 				</c>
 			</c>
 		</row>
@@ -743,7 +733,7 @@
 			</c>
 			<c>
 				<c>
-					<f>12</f>
+					<f>13</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -892,6 +882,11 @@
 	</merge>
 	<merge>
 		<r>21</r>
+		<c>1</c>
+		<w>1</w>
+	</merge>
+	<merge>
+		<r>21</r>
 		<c>3</c>
 		<w>1</w>
 	</merge>
@@ -998,6 +993,10 @@
 		<font>2</font>
 		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
+	</format>
+	<format>
+		<font>1</font>
+		<verticalAlignment>Top</verticalAlignment>
 	</format>
 	<format>
 		<bottomBorder>0</bottomBorder>
