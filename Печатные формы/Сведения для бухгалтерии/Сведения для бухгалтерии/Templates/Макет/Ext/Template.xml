@@ -616,7 +616,7 @@
 			<c>
 				<i>1</i>
 				<c>
-					<f>11</f>
+					<f>14</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -627,7 +627,7 @@
 			</c>
 			<c>
 				<c>
-					<f>14</f>
+					<f>15</f>
 					<parameter>ДокументКемВыдан</parameter>
 				</c>
 			</c>
@@ -658,7 +658,7 @@
 			<c>
 				<i>1</i>
 				<c>
-					<f>15</f>
+					<f>14</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -670,7 +670,7 @@
 			<c>
 				<i>4</i>
 				<c>
-					<f>14</f>
+					<f>15</f>
 					<parameter>АдресСотрудника</parameter>
 				</c>
 			</c>
@@ -1061,13 +1061,13 @@
 		<fillType>Parameter</fillType>
 	</format>
 	<format>
+		<font>1</font>
+		<verticalAlignment>Top</verticalAlignment>
+	</format>
+	<format>
 		<font>2</font>
 		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
-	</format>
-	<format>
-		<font>1</font>
-		<verticalAlignment>Top</verticalAlignment>
 	</format>
 	<format>
 		<bottomBorder>0</bottomBorder>
