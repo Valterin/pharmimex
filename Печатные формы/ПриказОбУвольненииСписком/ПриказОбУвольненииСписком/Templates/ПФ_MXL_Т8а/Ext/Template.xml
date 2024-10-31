@@ -1493,7 +1493,7 @@
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Дата заключения</v8:content>
+							<v8:content>Дата </v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -2883,7 +2883,7 @@
 	</format>
 	<format>
 		<font>0</font>
-		<height>846</height>
+		<height>84</height>
 		<verticalAlignment>Center</verticalAlignment>
 	</format>
 	<format>
