@@ -608,7 +608,12 @@ tº хранения</v8:content>
 				<i>1</i>
 				<c>
 					<f>21</f>
-					<parameter>номенклатура</parameter>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>[артикул] [номенклатура]</v8:content>
+						</v8:item>
+					</tl>
 				</c>
 			</c>
 			<c>
@@ -884,8 +889,10 @@ tº хранения</v8:content>
 		<leftBorder>0</leftBorder>
 		<bottomBorder>0</bottomBorder>
 		<width>72</width>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Center</verticalAlignment>
 		<textPlacement>Wrap</textPlacement>
-		<fillType>Parameter</fillType>
+		<fillType>Template</fillType>
 	</format>
 	<format>
 		<font>8</font>
