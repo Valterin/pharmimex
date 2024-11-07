@@ -23,6 +23,7 @@
 		</Attribute>
 		<Attribute name="Реквизит1" id="2">
 			<Type>
+				<v8:Type>cfg:DocumentRef.АктПриемкиВыполненныхРаботОказанныхУслуг</v8:Type>
 				<v8:Type>cfg:DocumentRef.ДоговорРаботыУслуги</v8:Type>
 			</Type>
 		</Attribute>
