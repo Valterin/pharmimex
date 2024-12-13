@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходный ордер на товары</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Распоряжение</dataPath>
+			<field>Распоряжение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Накладная</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Ссылка.Ссылка КАК Ссылка,
+	РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Ссылка.Статус КАК Статус,
+	РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение КАК Распоряжение,
+	РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Ссылка.Дата КАК Дата,
+	ПеремещениеТоваров.Ссылка КАК ПеремещениеТоваров,
+	РеализацияТоваровУслуг.Ссылка КАК РеализацияТоваровУслуг,
+	ПередачаСырьяПереработчику.Ссылка КАК ПередачаСырьяПереработчику,
+	ВнутреннееПотребление.Ссылка КАК ВнутреннееПотребление
+ПОМЕСТИТЬ ВТ_ТАБ1
+ИЗ
+	Документ.РасходныйОрдерНаТовары.ТоварыПоРаспоряжениям КАК РасходныйОрдерНаТоварыТоварыПоРаспоряжениям
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПеремещениеТоваров КАК ПеремещениеТоваров
+		ПО РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение = ПеремещениеТоваров.ЗаказНаПеремещение
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ПО РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение = РеализацияТоваровУслуг.ЗаказКлиента
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПередачаСырьяПереработчику КАК ПередачаСырьяПереработчику
+		ПО РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение = ПередачаСырьяПереработчику.ЗаказПереработчику
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ВнутреннееПотребление КАК ВнутреннееПотребление
+		ПО РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение = ВнутреннееПотребление.ЗаказНаВнутреннееПотребление
+ГДЕ
+	(ТИПЗНАЧЕНИЯ(РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение) = ТИП(Документ.ЗаказНаПеремещение)
+			ИЛИ ТИПЗНАЧЕНИЯ(РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение) = ТИП(Документ.РеализацияТоваровУслуг)
+			ИЛИ ТИПЗНАЧЕНИЯ(РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение) = ТИП(Документ.ЗаказКлиента)
+			ИЛИ ТИПЗНАЧЕНИЯ(РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение) = ТИП(Документ.ЗаказПереработчику)
+			ИЛИ ТИПЗНАЧЕНИЯ(РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Распоряжение) = ТИП(Документ.ЗаказНаВнутреннееПотребление))
+	И РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Ссылка.Проведен
+	И НЕ РасходныйОрдерНаТоварыТоварыПоРаспоряжениям.Ссылка.ПометкаУдаления
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ТАБ1.Ссылка КАК Ссылка,
+	ВТ_ТАБ1.Статус КАК Статус,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ВТ_ТАБ1.Распоряжение) = ТИП(Документ.ЗаказНаПеремещение)
+			ТОГДА ВТ_ТАБ1.ПеремещениеТоваров
+		КОГДА ТИПЗНАЧЕНИЯ(ВТ_ТАБ1.Распоряжение) = ТИП(Документ.ЗаказКлиента)
+			ТОГДА ВТ_ТАБ1.РеализацияТоваровУслуг
+		КОГДА ТИПЗНАЧЕНИЯ(ВТ_ТАБ1.Распоряжение) = ТИП(Документ.ЗаказПереработчику)
+			ТОГДА ВТ_ТАБ1.ПередачаСырьяПереработчику
+		КОГДА ТИПЗНАЧЕНИЯ(ВТ_ТАБ1.Распоряжение) = ТИП(Документ.ЗаказНаВнутреннееПотребление)
+			ТОГДА ВТ_ТАБ1.ВнутреннееПотребление
+		ИНАЧЕ ВТ_ТАБ1.Распоряжение
+	КОНЕЦ КАК Распоряжение
+ИЗ
+	ВТ_ТАБ1 КАК ВТ_ТАБ1
+{ГДЕ
+	(ВТ_ТАБ1.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода),
+	(ВТ_ТАБ1.Ссылка.Склад = &amp;Склад)}</query>
+	</dataSet>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Склад</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Склад</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Склады.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>СтатусОтгрузки</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус отгрузки</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Распоряжение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Склад</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">00000000-0000-0000-0000-000000000000</dcscor:value>
+					<dcsset:userSettingID>94ac20cb-3a88-49d2-b238-4262acb55148</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>7f71daae-46c0-4193-ac1e-96d21cc8680c</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
