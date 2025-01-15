@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="2"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="УстановитьРазрешение" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Установить разрешение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Установить разрешение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="УстановитьРазрешениеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Период" id="7">
+							<DataPath>Объект.Период</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПериодКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="Поставщик" id="10">
+							<DataPath>Объект.Поставщик</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПоставщикКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="Накладная" id="13">
+							<DataPath>Объект.Накладная</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НакладнаяКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="НакладнаяРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="СерияПроизводителя" id="16">
+							<DataPath>Объект.СерияПроизводителя</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СерияПроизводителяКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="СерияПроизводителяРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="Организация" id="19">
+							<DataPath>Объект.Организация</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="Номенклатура" id="129">
+							<DataPath>Объект.Номенклатура</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НоменклатураКонтекстноеМеню" id="130"/>
+							<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="131"/>
+						</InputField>
+						<LabelDecoration name="Декорация2" id="87">
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="89"/>
+						</LabelDecoration>
+						<UsualGroup name="Группа1" id="34">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="35"/>
+							<ChildItems>
+								<Button name="ПодобратьСерииУстановка" id="38">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПодобратьСерииУстановка</CommandName>
+									<ExtendedTooltip name="ПодобратьСерииУстановкаРасширеннаяПодсказка" id="39"/>
+								</Button>
+								<Button name="УстановитьРазрешение1" id="40">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.УстановитьРазрешение</CommandName>
+									<ExtendedTooltip name="УстановитьРазрешение1РасширеннаяПодсказка" id="41"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Декорация1" id="84">
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="86"/>
+						</LabelDecoration>
+						<Table name="Серия" id="46">
+							<TitleLocation>Top</TitleLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Серия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отобранные серии</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СерияКонтекстноеМеню" id="47"/>
+							<AutoCommandBar name="СерияКоманднаяПанель" id="48"/>
+							<ExtendedTooltip name="СерияРасширеннаяПодсказка" id="49"/>
+							<SearchStringAddition name="СерияСтрокаПоиска" id="50">
+								<AdditionSource>
+									<Item>Серия</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СерияСтрокаПоискаКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="СерияСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СерияСостояниеПросмотра" id="53">
+								<AdditionSource>
+									<Item>Серия</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СерияСостояниеПросмотраКонтекстноеМеню" id="54"/>
+								<ExtendedTooltip name="СерияСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СерияУправлениеПоиском" id="56">
+								<AdditionSource>
+									<Item>Серия</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СерияУправлениеПоискомКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="СерияУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СерияНомерСтроки" id="59">
+									<DataPath>Объект.Серия.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СерияНомерСтрокиКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="СерияНомерСтрокиРасширеннаяПодсказка" id="61"/>
+								</LabelField>
+								<InputField name="СерияСерия" id="62">
+									<DataPath>Объект.Серия.Серия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="СерияСерияКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="СерияСерияРасширеннаяПодсказка" id="64"/>
+								</InputField>
+								<InputField name="СерияНоменклатура" id="138">
+									<DataPath>Объект.Серия.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="СерияНоменклатураКонтекстноеМеню" id="139"/>
+									<ExtendedTooltip name="СерияНоменклатураРасширеннаяПодсказка" id="140"/>
+								</InputField>
+								<InputField name="СерияАртикул" id="141">
+									<DataPath>Объект.Серия.Артикул</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="СерияАртикулКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="СерияАртикулРасширеннаяПодсказка" id="143"/>
+								</InputField>
+								<InputField name="СерияГоденДо" id="144">
+									<DataPath>Объект.Серия.ГоденДо</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="СерияГоденДоКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="СерияГоденДоРасширеннаяПодсказка" id="146"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ОтозватьРазрешение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отозвать разрешение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отозвать разрешение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ОтозватьРазрешениеРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<InputField name="Организация1" id="22">
+							<DataPath>Объект.Организация</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="Организация1КонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="Организация1РасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<InputField name="СерияПроизводителя1" id="25">
+							<DataPath>Объект.СерияПроизводителя</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СерияПроизводителя1КонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="СерияПроизводителя1РасширеннаяПодсказка" id="27"/>
+						</InputField>
+						<InputField name="ДатаДокументаОснования" id="28">
+							<DataPath>Объект.ДатаДокументаОснования</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаДокументаОснованияКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ДатаДокументаОснованияРасширеннаяПодсказка" id="30"/>
+						</InputField>
+						<InputField name="ДокументОснование" id="31">
+							<DataPath>Объект.ДокументОснование</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДокументОснованиеКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="ДокументОснованиеРасширеннаяПодсказка" id="33"/>
+						</InputField>
+						<InputField name="Номенклатура1" id="132">
+							<DataPath>Объект.Номенклатура</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="Номенклатура1КонтекстноеМеню" id="133"/>
+							<ExtendedTooltip name="Номенклатура1РасширеннаяПодсказка" id="134"/>
+						</InputField>
+						<LabelDecoration name="Декорация3" id="90">
+							<ContextMenu name="Декорация3КонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="92"/>
+						</LabelDecoration>
+						<UsualGroup name="Группа2" id="36">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<Button name="ПодобратьСерииОтозвать" id="42">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПодобратьСерииОтозвать</CommandName>
+									<ExtendedTooltip name="ПодобратьСерииОтозватьРасширеннаяПодсказка" id="43"/>
+								</Button>
+								<Button name="ОтозватьРазрешения" id="44">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОтозватьРазрешения</CommandName>
+									<ExtendedTooltip name="ОтозватьРазрешенияРасширеннаяПодсказка" id="45"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Декорация4" id="93">
+							<ContextMenu name="Декорация4КонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="95"/>
+						</LabelDecoration>
+						<Table name="Серия1" id="65">
+							<TitleLocation>Top</TitleLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Серия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отобранные серии</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="Серия1КонтекстноеМеню" id="66"/>
+							<AutoCommandBar name="Серия1КоманднаяПанель" id="67"/>
+							<ExtendedTooltip name="Серия1РасширеннаяПодсказка" id="68"/>
+							<SearchStringAddition name="Серия1СтрокаПоиска" id="69">
+								<AdditionSource>
+									<Item>Серия1</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия1СтрокаПоискаКонтекстноеМеню" id="70"/>
+								<ExtendedTooltip name="Серия1СтрокаПоискаРасширеннаяПодсказка" id="71"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="Серия1СостояниеПросмотра" id="72">
+								<AdditionSource>
+									<Item>Серия1</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия1СостояниеПросмотраКонтекстноеМеню" id="73"/>
+								<ExtendedTooltip name="Серия1СостояниеПросмотраРасширеннаяПодсказка" id="74"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="Серия1УправлениеПоиском" id="75">
+								<AdditionSource>
+									<Item>Серия1</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия1УправлениеПоискомКонтекстноеМеню" id="76"/>
+								<ExtendedTooltip name="Серия1УправлениеПоискомРасширеннаяПодсказка" id="77"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="Серия1НомерСтроки" id="78">
+									<DataPath>Объект.Серия.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="Серия1НомерСтрокиКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="Серия1НомерСтрокиРасширеннаяПодсказка" id="80"/>
+								</LabelField>
+								<InputField name="Серия1Серия" id="81">
+									<DataPath>Объект.Серия.Серия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия1СерияКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="Серия1СерияРасширеннаяПодсказка" id="83"/>
+								</InputField>
+								<InputField name="Серия1Номенклатура" id="147">
+									<DataPath>Объект.Серия.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия1НоменклатураКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="Серия1НоменклатураРасширеннаяПодсказка" id="149"/>
+								</InputField>
+								<InputField name="Серия1Артикул" id="150">
+									<DataPath>Объект.Серия.Артикул</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия1АртикулКонтекстноеМеню" id="151"/>
+									<ExtendedTooltip name="Серия1АртикулРасширеннаяПодсказка" id="152"/>
+								</InputField>
+								<InputField name="Серия1ГоденДо" id="153">
+									<DataPath>Объект.Серия.ГоденДо</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия1ГоденДоКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="Серия1ГоденДоРасширеннаяПодсказка" id="155"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ПовторноРазрешитьПродажу" id="96">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повторно разрешить продажу</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повторно разрешить продажу</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПовторноРазрешитьПродажуРасширеннаяПодсказка" id="97"/>
+					<ChildItems>
+						<InputField name="СерияПроизводителя2" id="98">
+							<DataPath>Объект.СерияПроизводителя</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СерияПроизводителя2КонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="СерияПроизводителя2РасширеннаяПодсказка" id="100"/>
+						</InputField>
+						<InputField name="Организация2" id="101">
+							<DataPath>Объект.Организация</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="Организация2КонтекстноеМеню" id="102"/>
+							<ExtendedTooltip name="Организация2РасширеннаяПодсказка" id="103"/>
+						</InputField>
+						<InputField name="Номенклатура2" id="135">
+							<DataPath>Объект.Номенклатура</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="Номенклатура2КонтекстноеМеню" id="136"/>
+							<ExtendedTooltip name="Номенклатура2РасширеннаяПодсказка" id="137"/>
+						</InputField>
+						<UsualGroup name="Группа3" id="123">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="124"/>
+							<ChildItems>
+								<Button name="ПодобратьСерииПовторно" id="125">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПодобратьСерииПовторно</CommandName>
+									<ExtendedTooltip name="ПодобратьСерииПовторноРасширеннаяПодсказка" id="126"/>
+								</Button>
+								<Button name="РазрешитьПродажу" id="127">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.РазрешитьПродажу</CommandName>
+									<ExtendedTooltip name="РазрешитьПродажуРасширеннаяПодсказка" id="128"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Серия2" id="104">
+							<TitleLocation>Top</TitleLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Серия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отобранные серии</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="Серия2КонтекстноеМеню" id="105"/>
+							<AutoCommandBar name="Серия2КоманднаяПанель" id="106"/>
+							<ExtendedTooltip name="Серия2РасширеннаяПодсказка" id="107"/>
+							<SearchStringAddition name="Серия2СтрокаПоиска" id="108">
+								<AdditionSource>
+									<Item>Серия2</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия2СтрокаПоискаКонтекстноеМеню" id="109"/>
+								<ExtendedTooltip name="Серия2СтрокаПоискаРасширеннаяПодсказка" id="110"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="Серия2СостояниеПросмотра" id="111">
+								<AdditionSource>
+									<Item>Серия2</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия2СостояниеПросмотраКонтекстноеМеню" id="112"/>
+								<ExtendedTooltip name="Серия2СостояниеПросмотраРасширеннаяПодсказка" id="113"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="Серия2УправлениеПоиском" id="114">
+								<AdditionSource>
+									<Item>Серия2</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="Серия2УправлениеПоискомКонтекстноеМеню" id="115"/>
+								<ExtendedTooltip name="Серия2УправлениеПоискомРасширеннаяПодсказка" id="116"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="Серия1НомерСтроки1" id="117">
+									<DataPath>Объект.Серия.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="Серия1НомерСтроки1КонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="Серия1НомерСтроки1РасширеннаяПодсказка" id="119"/>
+								</LabelField>
+								<InputField name="Серия1Серия1" id="120">
+									<DataPath>Объект.Серия.Серия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия1Серия1КонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="Серия1Серия1РасширеннаяПодсказка" id="122"/>
+								</InputField>
+								<InputField name="Серия2Номенклатура" id="156">
+									<DataPath>Объект.Серия.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия2НоменклатураКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="Серия2НоменклатураРасширеннаяПодсказка" id="158"/>
+								</InputField>
+								<InputField name="Серия2Артикул" id="159">
+									<DataPath>Объект.Серия.Артикул</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия2АртикулКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="Серия2АртикулРасширеннаяПодсказка" id="161"/>
+								</InputField>
+								<InputField name="Серия2ГоденДо" id="162">
+									<DataPath>Объект.Серия.ГоденДо</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<OpenButton>false</OpenButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="Серия2ГоденДоКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="Серия2ГоденДоРасширеннаяПодсказка" id="164"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.PhErpУстановкаСтатусовСерии</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СерияНомерСтроки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СерияСерия</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СерияНоменклатура</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СерияАртикул</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СерияГоденДо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1НомерСтроки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1Серия</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1Номенклатура</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1Артикул</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1ГоденДо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1НомерСтроки1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия1Серия1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия2Номенклатура</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия2Артикул</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Серия2ГоденДо</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Серия.ГоденДо</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="v8:StandardBeginningDate">
+							<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+						</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFF00</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПодобратьСерииУстановка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии установка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодобратьСерииУстановка</Action>
+		</Command>
+		<Command name="УстановитьРазрешение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить разрешение на продажу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить разрешение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьРазрешение</Action>
+		</Command>
+		<Command name="ПодобратьСерииОтозвать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии отозвать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодобратьСерииОтозвать</Action>
+		</Command>
+		<Command name="ОтозватьРазрешения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отозвать разрешения на продажу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отозвать разрешения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтозватьРазрешения</Action>
+		</Command>
+		<Command name="ПодобратьСерииПовторно" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать серии повторно</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодобратьСерииПовторно</Action>
+		</Command>
+		<Command name="РазрешитьПродажу" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить продажу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить продажу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазрешитьПродажу</Action>
+		</Command>
+	</Commands>
+</Form>
